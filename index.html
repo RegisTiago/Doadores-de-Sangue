@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- comentario -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doe Sangue! Doe Vida!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="logo/icon.ico" />
+
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="logo/logo.png" alt="DOE">
+        <h2>A sua doação importa</h2>
+        <p>Mais de 38.000 doações são necessárias.</p>
+        <p>Apenas 1,9% da população brasileira, doa sangue.</p>
+        <button>Quero Ajudar!</button>
+    </header>
+
+    <section class="form hide">
+        <h2>Entre na lista de doadores</h2>
+        <form action="/" method="POST">
+
+            <input type="text" name="name" placeholder="Nome Completo">
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="blood" placeholder="Tipo Sanguineo">
+            <input type="text" name="tel" placeholder="Telefone">
+            <input type="text" name="city" placeholder="Cidade">
+            <button>Quero Ajudar!</button>
+        </form>
+    </section>
+    <main>
+        <h2>Últimos <span>Doadores</span></h2>
+        <section class="donors">
+            {% for doadores in donors%}
+            <div class="donor">
+                <div class="blood">{{doadores.tipo_sangue}}</div>
+                <p>{{doadores.nome}}</p>
+                <p>{{doadores.cidade}}</p>
+            </div>
+            {%endfor%}
+        </section>
+    </main>
+    <footer>© 2020 Doe Sangue! Doe Vida! | Desenvolvido por Tiago Regis</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
